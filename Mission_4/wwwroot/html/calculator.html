@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Grade Calculator</title>
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../NewFolder/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Mission_4</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#">Grade Calculator</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="calc">
+        <form>
+            <br />
+
+            <h4>Enter the following as percents with no decimals or signs</h4>
+
+            <br />
+
+            <label for="assign">Assignment Average: </label><input type="text" id="assign" class="rounded"/><br />
+            <br />
+            <label for="group">Group Project Average: </label><input type="text" id="group" class="rounded"/><br />
+            <br />
+            <label for="quiz">Quiz Average: </label><input type="text" id="quiz" class="rounded"/><br />
+            <br />
+            <label for="mid">Midterm Average: </label><input type="text" id="mid" class="rounded"/><br />
+            <br />
+            <label for="final">Final Exam Score: </label><input type="text" id="final" class="rounded"/><br />
+            <br />
+            <label for="intex">Intex Score: </label><input type="text" id="intex" class="rounded"/><br />
+            <br />
+
+            <button type="button" id="sub" onclick="calGrade()" class="btn btn-secondary">Calculate Grade</button>
+            <button type="reset" id="clear" class="btn btn-secondary" onclick="hideScore()">Clear</button>
+        </form>
+        <br />
+        <h4 style="display: none; color: green;" id="total">Final Score: </h4>
+    </div>
+
+    <script src="../lib/jquery/jquery-3.6.3.min.js"></script>
+    <script src="../JavaScript/main.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
