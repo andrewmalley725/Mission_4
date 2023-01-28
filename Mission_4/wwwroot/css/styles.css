@@ -12,3 +12,20 @@ label{
 input{
     width: 400px;
 }
+
+h1{
+    text-align: center;
+}
+
+#media{
+    text-align: center;
+}
+
+#media img{
+    height: 300px;
+    width: 400px;
+}
+
+#jobs{
+    margin-left: 400px;
+}
