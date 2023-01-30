@@ -7,6 +7,7 @@ function calGrade() {
     let midScore = $('#mid').val() * .1;
     let finalScore = $('#final').val() * .1;
     let intexScore = $('#intex').val() * .1;
+    let letterGrade;
 
     let total = assignScore + groupScore + quizScore + midScore + finalScore + intexScore;
     total = Math.round(total); 
@@ -16,7 +17,33 @@ function calGrade() {
     }
 
     else {
-        document.getElementById('total').innerHTML += (total + '%'); //adds toatal to innerHTML of current total tag
+
+        if (total >= 94)
+            letterGrade = 'A';
+        else if (total < 94 && total >= 90)
+            letterGrade = 'A-';
+        else if (total < 89 && total >= 87)
+            letterGrade = 'B+';
+        else if (total < 87 && total >= 84)
+            letterGrade = 'B';
+        else if (total < 84 && total >= 80)
+            letterGrade = 'B-';
+        else if (total < 80 && total >= 77)
+            letterGrade = 'C+';
+        else if (total < 77 && total >= 74)
+            letterGrade = 'C';
+        else if (total < 74 && total >= 70)
+            letterGrade = 'C-';
+        else if (total < 70 && total >= 67)
+            letterGrade = 'D+';
+        else if (total < 67 && total >= 64)
+            letterGrade = 'D';
+        else if (total < 64 && total >= 60)
+            letterGrade = 'D-';
+        else
+            letterGrade = 'E';
+
+        document.getElementById('total').innerHTML += letterGrade; //adds toatal to innerHTML of current total tag
         document.getElementById('total').style.display = 'block'; //unhides p-tag with total percentage
     }
     
@@ -24,5 +51,5 @@ function calGrade() {
 
 function hideScore() { //hides total score when clear button is clicked
     document.getElementById("total").style.display = 'none';
-    document.getElementById("total").innerHTML = 'Final score: ';
+    document.getElementById("total").innerHTML = 'Final Grade: ';
 }
