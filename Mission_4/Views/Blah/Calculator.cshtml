@@ -3,32 +3,40 @@
 *@
 @{
     ViewData["Title"] = "Calculator";
+    
 }
 
+@model CalculatorClass
+
 <div id="calc">
-    <form>
+
+    <form method="post">
         <br />
 
         <h4>Enter the following as percents with no decimals or signs</h4>
 
         <br />
 
-        <label for="assign">Assignment Average: </label><input type="text" id="assign" class="rounded" /><br />
+        <label for="assign">Assignment Average: </label><input type="number" id="assign" class="rounded" name="assignment" asp-for="assignment" /><br />
         <br />
-        <label for="group">Group Project Average: </label><input type="text" id="group" class="rounded" /><br />
+        <label for="group">Group Project Average: </label><input type="number" id="group" class="rounded" asp-for="group" /><br />
         <br />
-        <label for="quiz">Quiz Average: </label><input type="text" id="quiz" class="rounded" /><br />
+        <label for="quiz">Quiz Average: </label><input type="number" id="quiz" class="rounded" asp-for="quiz" /><br />
         <br />
-        <label for="mid">Midterm Average: </label><input type="text" id="mid" class="rounded" /><br />
+        <label for="mid">Midterm Average: </label><input type="number" id="mid" class="rounded" asp-for="midterm" /><br />
         <br />
-        <label for="final">Final Exam Score: </label><input type="text" id="final" class="rounded" /><br />
+        <label for="final">Final Exam Score: </label><input type="number" id="final" class="rounded" asp-for="final" /><br />
         <br />
-        <label for="intex">Intex Score: </label><input type="text" id="intex" class="rounded" /><br />
+        <label for="intex">Intex Score: </label><input type="number" id="intex" class="rounded" asp-for="intex" /><br />
         <br />
 
-        <button type="button" id="sub" onclick="calGrade()" class="btn btn-secondary">Calculate Grade</button>
-        <button type="reset" id="clear" class="btn btn-secondary" onclick="hideScore()">Clear</button>
+        <button type="submit" id="sub" class="btn btn-secondary" onclick="calGrade()">Calculate Grade</button>
     </form>
+
+    <div asp-validation-summary="All"></div>
+
     <br />
     <h4 style="display: none; color: green;" id="total">Final Grade: </h4>
+
+    <script src="~/JavaScript/main.js"></script>
 </div>

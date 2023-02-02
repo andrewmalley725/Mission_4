@@ -43,13 +43,8 @@ function calGrade() {
         else
             letterGrade = 'E';
 
-        document.getElementById('total').innerHTML += letterGrade; //adds toatal to innerHTML of current total tag
-        document.getElementById('total').style.display = 'block'; //unhides p-tag with total percentage
+        alert('Final Grade: ' + letterGrade);
     }
     
 }
 
-function hideScore() { //hides total score when clear button is clicked
-    document.getElementById("total").style.display = 'none';
-    document.getElementById("total").innerHTML = 'Final Grade: ';
-}
